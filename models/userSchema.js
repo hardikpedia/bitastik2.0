@@ -13,24 +13,17 @@ const todoSchema = new Schema({
 });
 
 const userSchema = new Schema({
-  uid: {
-    type: String,
-    required: true,
-    unique: true,
-  },
-  username: {
-    type: String,
-    required: true,
-  },
   email: {
     type: String,
     required: true,
   },
   roll: {
     type: String,
+ 
   },
   image: {
     type: String,
+ 
   },
   isAdmin: {
     type: Boolean,
@@ -38,15 +31,12 @@ const userSchema = new Schema({
   },
   insta: {
     type: String,
-    unique: true,
   },
   linkedIn: {
     type: String,
-    unique: true,
   },
   github: {
     type: String,
-    unique: true,
   },
   bio: {
     type: String,
@@ -54,11 +44,9 @@ const userSchema = new Schema({
   },
   branch: {
     type: String,
-    required: true,
-  },
+ },
   yearofgraduation: {
     type: Number,
-    required: true,
   },
   hostel: {
     type: Number,
@@ -73,6 +61,10 @@ const userSchema = new Schema({
     type: [todoSchema], // Embedding the array of todos using the todoSchema
     default: [],
   },
+  birthdate:{
+    type:Date,
+  }
+
 });
 
 export default models.User || model('User', userSchema);

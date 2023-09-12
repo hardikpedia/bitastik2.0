@@ -1,17 +1,22 @@
-import { Schema, model, models } from 'mongoose';
-import User from './userSchema'
+import { Schema, model, models } from "mongoose";
+import User from "./userSchema";
 
+const votedBySchema = new Schema({
+  email: { type: String },
+
+  vote: {
+    type: String,
+    enum: ["upvote", "downvote"],
+    default: "upvote",
+  },
+});
 const confessionSchema = new Schema(
   {
     content: {
       type: String,
       max: 500,
     },
-    uid: {
-      type: String,
-      required: true,
-    },
-    name: {
+    email: {
       type: String,
       required: true,
     },
@@ -23,15 +28,10 @@ const confessionSchema = new Schema(
       type: Number,
       default: 0,
     },
-    votedBy: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'User', // Reference to the User model
-      },
-    ],
-   
+  
+    votedBy:{type: [votedBySchema]},
   },
   { timestamps: true }
 );
 
-export default models.confession || model('confession', confessionSchema);
+export default models.confession || model("confession", confessionSchema);

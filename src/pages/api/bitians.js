@@ -2,6 +2,8 @@
 import User from '../../../models/userSchema'
 import dbConnect from "../../../lib/dbconnect";
 
+
+
 dbConnect();
 
 async function handler(req,res){

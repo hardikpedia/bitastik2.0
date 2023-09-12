@@ -3,6 +3,7 @@ import { Schema, model, models } from 'mongoose';
 const newsSchema = new Schema({
   title: {
     type: String,
+    unique: true,
   },
   image: {
     type: String,
@@ -15,5 +16,5 @@ const newsSchema = new Schema({
   }
 
 }, { timestamps: true });
-export default models.news || model('news', newsSchema);
+export default models.News || model('News', newsSchema);
 
