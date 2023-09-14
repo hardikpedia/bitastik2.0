@@ -38,7 +38,7 @@ const ConfessionPage = () => {
 
 
   return (
-    <div>
+    <div className="w-3/4">
       <ConfessionList
         confessions={data.confessions}
         upvoteHandler={upvoteHandler}

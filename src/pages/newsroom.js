@@ -17,7 +17,7 @@ const NewsPage = ({ data }) => {
 
 
   return (
-    <div className="absolute inset-0 lg:inset-x-64 transition-inset md:transition-inset-0.3s">
+    <div className="w-3/4">
       <NewsList data={news} />
   
     </div>

@@ -3,12 +3,12 @@ import Header from './Header';
 
 function NewsList({ data }) {
     return (
-        <>
-            <div className="">
+        <div >
+         
                 <Header />
-            </div>
+    
 
-            <ul className="list-none mt-10 px-4 flex flex-wrap justify-center">
+            <div className="mt-10 px-4 flex flex-wrap ">
                 {data.map((news) => (
                     <NewsItem
                         key={news.id}
@@ -20,8 +20,8 @@ function NewsList({ data }) {
                     />
                                        
                 ))} 
-            </ul>
-        </>
+            </div>
+        </div>
     );
 }
 

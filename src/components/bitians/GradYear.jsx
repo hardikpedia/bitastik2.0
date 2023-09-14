@@ -11,11 +11,9 @@ function GradYear({ onSelect, selectedYears }) {
 
   const toggleYear = (year) => {
     if (selectedYears.includes(year)) {
-      // Year is already selected, remove it
       const updatedYears = selectedYears.filter((selectedYear) => selectedYear !== year);
       onSelect(updatedYears);
     } else {
-      // Year is not selected, add it
       const updatedYears = [...selectedYears, year];
       onSelect(updatedYears);
     }
@@ -30,7 +28,7 @@ function GradYear({ onSelect, selectedYears }) {
         }`}
       >
         {selectedYears.length > 0
-          ? selectedYears.join(', ') // Display selected years if any
+          ? selectedYears.join(', ') 
           : 'Filter by year'}
         <svg
           className={`w-4 h-4 ml-2 transition-transform ${
@@ -50,7 +48,7 @@ function GradYear({ onSelect, selectedYears }) {
       </button>
 
       {isDropdownOpen && (
-        <div className="absolute top-12 right-0 mt-2 w-56 bg-black text-white rounded-lg shadow-lg">
+        <div className="absolute top-12 right-0 mt-2 w-36 bg-black text-white rounded-lg shadow-lg">
           <h6 className="text-white font-medium p-3">Year</h6>
           <ul>
             {years.map((year) => (

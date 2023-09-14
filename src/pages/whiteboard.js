@@ -7,11 +7,10 @@ import background from '../../assets/background.jpg';
 function WhiteBoard() {
   return (
     <ReactSketchCanvas
-      className="border border-gray-300 rounded fixed top-0 w-full h-full"
       style={{
-        backgroundImage: `url(${background})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
+        // backgroundSize: 'cover',
+        // backgroundRepeat: 'no-repeat',
+        backgroundColor: '#000',
       }}
     ></ReactSketchCanvas>
   );

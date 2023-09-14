@@ -6,18 +6,18 @@ import { useSession } from 'next-auth/react';
 import {useRouter} from 'next/router';
 import { useState,useEffect } from 'react';
 const HomeComponent = () => {
-    const router = useRouter();
-    const [email, setEmail] = useState('');
-    const session=useSession();
-    console.log(session);
-    useEffect(() => {
-        if (session.status === 'authenticated') {
-            setEmail(session.data.user.email);
-        }
-        else{
-            router.push('/');
-        }
-    }, [session,router]);
+    // const router = useRouter();
+    // const [email, setEmail] = useState('');
+    // const session=useSession();
+    // console.log(session);
+    // useEffect(() => {
+    //     if (session.status === 'authenticated') {
+    //         setEmail(session.data.user.email);
+    //     }
+    //     else{
+    //         router.push('/');
+    //     }
+    // }, [session,router]);
 
     return (
         <>

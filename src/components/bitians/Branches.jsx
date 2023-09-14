@@ -48,7 +48,7 @@ function Branches({ onSelect,selectedBranches }) {
       </button>
 
       {isDropdownOpen && (
-        <div className="absolute top-12 right-0 mt-2 w-56 bg-black text-white rounded-lg shadow-lg">
+        <div className="absolute top-12 right-0 mt-2 w-36 bg-black text-white rounded-lg shadow-lg">
           <h6 className="text-white font-medium p-3">branch</h6>
           <ul>
             {branches.map((branch) => (

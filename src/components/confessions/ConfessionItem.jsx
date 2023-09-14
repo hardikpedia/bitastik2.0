@@ -19,7 +19,7 @@ function ConfessionItem({ confession, upvoteHandler,downvoteHandler }) {
   }
 
   return (
-  <div className="border rounded-lg p-4 shadow-md bg-gradient-to-b from-gray-800 to-gray-200 text-white mb-4">
+  <div className=" p-4   bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700 text-gray-400 mb-4">
   <div className="max-w-xl"> {/* Set a maximum width */}
     <div className="text-lg mb-2">{confession.content}</div>
   </div>

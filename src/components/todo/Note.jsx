@@ -1,20 +1,25 @@
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-function Note({id,note,title,deleteNote}) {
+function Note({ id, note, title, deleteNote }) {
   function handleClick() {
     deleteNote(id);
   }
 
   return (
-    <div className="note bg-white rounded-lg shadow-md p-4 w-60 m-4">
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
-    <p className="text-gray-600">{note}</p>
-    <button onClick={handleClick} className="float-right w-8 h-8 bg-black text-white hover:bg-gray-900 rounded-full flex items-center justify-center">
-      <DeleteIcon />
-    </button>
-  </div>
-  
+    <div>
+      <a
+        href="#"
+        className="max-w-sm w-60 flex flex-col p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
+      >
+        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+          {title}
+        </h5>
+        <p className="font-normal text-gray-700 dark:text-gray-400 whitespace-normal">
+          {note}
+        </p>
+      </a>
+    </div>
   );
 }
 

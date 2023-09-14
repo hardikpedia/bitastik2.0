@@ -18,7 +18,7 @@ function NewsItem(props) {
   }
 
   return (
-    <li className="w-3/5 md:w-1/2 lg:w-1/3 xl:w-1/4 p-4">
+    <li className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
       <Card>
         <div className="aspect-w-3 aspect-h-2">
           <Image src={shinchan} alt="" className="object-cover" />

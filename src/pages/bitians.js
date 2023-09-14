@@ -1,7 +1,6 @@
 // import ProfileCard from "@/components/bitians/ProfileCard";
 import Gradyear from "@/components/bitians/GradYear";
 import Branches from "@/components/bitians/Branches";
-import Header from "@/components/bitians/Header";
 import { useEffect, useState } from "react";
 import ProfileList from "@/components/bitians/ProfileList";
 
@@ -41,10 +40,10 @@ const filteredBitians = filteredByYears.filter((bitian) =>
 
 
   return (
-    <div className="w-full lg:w-1/2">
-      <Header />
+    <div className="w-full lg:w-1/2 ">
+      
 
-      <div className="fixed top-0 right-0 z-50">
+      <div className="fixed top-0 right-0 z-50 flex flex-row">
         <Gradyear onSelect={updateSelectedYears} selectedYears={selectedYears} />
         <Branches onSelect={updateSelectedBranches} selectedBranches={selectedBranches}/>
       </div>
