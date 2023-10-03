@@ -1,10 +1,10 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
-function Modal({ isModalOpen, setIsModalOpen, title, content }) {
+export default function Modal({ isModalOpen, setIsModalOpen, title, content }) {
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
-  
+
   return (
     <div
       className={`fixed  z-50 w-full p-4 overflow-x-hidden overflow-y-auto 1h-[calc(100%-1rem)] max-h-full inset-0 flex items-center justify-center ${
@@ -15,7 +15,7 @@ function Modal({ isModalOpen, setIsModalOpen, title, content }) {
         <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
           <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
             <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
-             {title}
+              {title}
             </h3>
             <button
               type="button"
@@ -42,15 +42,11 @@ function Modal({ isModalOpen, setIsModalOpen, title, content }) {
           </div>
           <div className="p-6 space-y-6">
             <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
-           {content}
+              {content}
             </p>
-            
           </div>
-          
         </div>
       </div>
     </div>
   );
 }
-
-export default Modal;
