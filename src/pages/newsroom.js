@@ -1,8 +1,9 @@
 import NewsList from "@/components/news/NewsList";
-import useSWR from "swr";
 import axios from "axios";
 import { useEffect,useState } from "react";
-
+import Link from "next/link";
+import add from "../../assets/add.gif"
+import Image from "next/image";
 
 const NewsPage = ({ data }) => {
   const [news, setNews] = useState([]);
@@ -17,10 +18,17 @@ const NewsPage = ({ data }) => {
 
 
   return (
-    <div className="w-3/4">
+    <div className="w-3/4 ml-8">
+       <Link href='/addnews'>
+                     <div>
+                    <button className="fixed top-0 right-0 m-2 p-2 text-black bg-white rounded-md shadow-md"><Image src={add} height={36} width={36} alt='' /><span>Add News</span></button>
+                    </div>
+                </Link>
       <NewsList data={news} />
   
+
     </div>
+    
   );
 };
 

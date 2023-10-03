@@ -10,9 +10,18 @@ const todoSchema = new Schema({
     type: String,
     max: 100,
   },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
 });
 
 const userSchema = new Schema({
+  name: {
+    type: String,
+    required: true,
+    max: 50,
+  },
   email: {
     type: String,
     required: true,

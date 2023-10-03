@@ -1,24 +1,50 @@
 import React from "react";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-function Note({ id, note, title, deleteNote }) {
+function Note({ id, note, title, deleteNote, createdAt }) {
   function handleClick() {
     deleteNote(id);
   }
 
   return (
-    <div>
-      <a
-        href="#"
-        className="max-w-sm w-60 flex flex-col p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
-      >
-        <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-          {title}
-        </h5>
-        <p className="font-normal text-gray-700 dark:text-gray-400 whitespace-normal">
-          {note}
+    <div
+      className="rounded-lg shadow-xl bg-gray-900 text-white font-mono"
+      style={{ width: "450px" }}
+    >
+      <div className="border-b border-gray-800 px-8 py-3">
+        <div
+          className="w-6 h-6 rounded-full bg-red-500 cursor-pointer flex items-center justify-center"
+          onClick={handleClick}
+        >
+          <div className="w-4 h-1 bg-white transform rotate-45 absolute"></div>
+          <div className="w-4 h-1 bg-white transform -rotate-45 absolute"></div>
+        </div>{" "}
+      </div>
+      <div className="px-8 py-6">
+        <p>
+          <em className="text-blue-400">const</em>{" "}
+          <span className="text-green-400">Todo</span>{" "}
+          <span className="text-pink-500">=</span>{" "}
+          <em className="text-blue-400">function</em>() {"{"}
         </p>
-      </a>
+        <p>
+          &nbsp;&nbsp;<span className="text-pink-500">return</span> {"{"}
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;title:{" "}
+          <span className="text-yellow-300">{title}</span>,
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;note:{" "}
+          <span className="text-yellow-300">{note}</span>,
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;&nbsp;date:{" "}
+          <span className="text-yellow-300">{createdAt}</span>,
+        </p>
+        <p>&nbsp;&nbsp;{"}"}</p>
+        <p>{"}"}</p>
+      </div>
     </div>
   );
 }

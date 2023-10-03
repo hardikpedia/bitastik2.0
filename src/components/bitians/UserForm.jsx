@@ -88,10 +88,10 @@ const UserForm = ({ updateUser }) => {
 
   return (
     <div className="max-w-md mx-auto mt-10 p-4">
-      <h2 className="text-2xl font-semibold mb-4">User Information</h2>
+      <h2 className="text-2xl font-semibold mb-4 text-white">User Information</h2>
       <form onSubmit={formik.handleSubmit} className="flex flex-wrap">
         <div className="w-full md:w-1/2 mb-4 pr-2">
-          <label htmlFor="branch" className="block text-gray-600 mb-2">
+          <label htmlFor="branch" className="block text-white mb-2">
             Branch
           </label>
           <select
@@ -131,7 +131,7 @@ const UserForm = ({ updateUser }) => {
         <div className="w-full md:w-1/2 mb-4 pl-2">
           <label
             htmlFor="yearofgraduation"
-            className="block text-gray-600 mb-2"
+            className="block text-white mb-2"
           >
             Year of Graduation
           </label>
@@ -160,7 +160,7 @@ const UserForm = ({ updateUser }) => {
             )}
         </div>
         <div className="w-full md:w-1/2 mb-4 pr-2">
-          <label htmlFor="github" className="block text-gray-600 mb-2">
+          <label htmlFor="github" className="block text-white mb-2">
             GitHub
           </label>
           <input
@@ -182,7 +182,7 @@ const UserForm = ({ updateUser }) => {
         </div>
 
         <div className="w-full md:w-1/2 mb-4 pl-2">
-          <label htmlFor="linkedIn" className="block text-gray-600 mb-2">
+          <label htmlFor="linkedIn" className="block text-white mb-2">
             LinkedIn
           </label>
           <input
@@ -203,7 +203,7 @@ const UserForm = ({ updateUser }) => {
           )}
         </div>
         <div className="w-full md:w-1/2 mb-4 pr-2">
-          <label htmlFor="insta" className="block text-gray-600 mb-2">
+          <label htmlFor="insta" className="block text-white mb-2">
             Instagram
           </label>
           <input
@@ -225,7 +225,7 @@ const UserForm = ({ updateUser }) => {
         </div>
 
         <div className="w-full md:w-1/2 mb-4 pl-2">
-          <label htmlFor="bio" className="block text-gray-600 mb-2">
+          <label htmlFor="bio" className="block text-white mb-2">
             Bio
           </label>
           <textarea
@@ -246,7 +246,7 @@ const UserForm = ({ updateUser }) => {
         </div>
         {/* Pair 6: Hostel and Room */}
         <div className="w-full md:w-1/2 mb-4 pr-2">
-          <label htmlFor="hostel" className="block text-gray-600 mb-2">
+          <label htmlFor="hostel" className="block text-white mb-2">
             Hostel
           </label>
           <input
@@ -268,7 +268,7 @@ const UserForm = ({ updateUser }) => {
         </div>
 
         <div className="w-full md:w-1/2 mb-4 pl-2">
-          <label htmlFor="room" className="block text-gray-600 mb-2">
+          <label htmlFor="room" className="block text-white mb-2">
             Room
           </label>
           <input
@@ -291,7 +291,7 @@ const UserForm = ({ updateUser }) => {
 
         {/* Pair 7: Phone */}
         <div className="w-full md:w-1/2 mb-4 pr-2">
-          <label htmlFor="phone" className="block text-gray-600 mb-2">
+          <label htmlFor="phone" className="block text-white mb-2">
             Phone
           </label>
           <div className="flex">
@@ -332,7 +332,7 @@ const UserForm = ({ updateUser }) => {
 
         {/* Pair 8: Birthdate */}
         <div className="w-full mb-4">
-          <label htmlFor="birthdate" className="block text-gray-600 mb-2">
+          <label htmlFor="birthdate" className="block text-white mb-2">
             Birthdate
           </label>
           <DatePicker

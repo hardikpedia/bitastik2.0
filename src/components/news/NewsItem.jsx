@@ -1,51 +1,56 @@
-import React, { useState } from 'react';
-import { useRouter } from 'next/router';
-import Image from 'next/image';
-import Card from '../Card';
-import shinchan from '../../../assets/shinchan.jpg';
-import Modal from './modal';
+import React, { useState } from "react";
+import Image from "next/image";
+import shinchan from "../../../assets/shinchan.jpg";
+import Modal from "./Modal";
+
 function NewsItem(props) {
   const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const router = useRouter();
 
   function showDetailsHandler() {
     setIsModalOpen(true);
   }
 
-  function closeModalHandler() {
-    setIsModalOpen(false);
-  }
+  
+  const truncatedDescription = props.description.length > 25
+    ? props.description.slice(0, 25) + "..."
+    : props.description;
+
+
+  
 
   return (
-    <li className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
-      <Card>
-        <div className="aspect-w-3 aspect-h-2">
-          <Image src={shinchan} alt="" className="object-cover" />
-        </div>
-        <div className="p-4">
-          <h3 className="text-lg font-semibold">{props.title}</h3>
-          <p className="text-sm text-gray-600">{props.date}</p>
-        </div>
-        <div className="p-4">
-          <button
-            onClick={showDetailsHandler}
-            className="block mx-auto bg-red-500 text-white px-4 py-2 rounded font-bold cursor-pointer hover:bg-red-600 focus:outline-none focus:ring focus:ring-red-300"
-          >
-            Show Details
-          </button>
-        </div>
-      </Card>
-
-      {/* Render the modal */}
-      {console.log(props)}
-      <Modal
-        isOpen={isModalOpen}
-        onClose={closeModalHandler}
-        title={props.title}
-        content={props.description}
-      />
-    </li>
+    <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 mx-4 my-4">
+      
+        <Image className="rounded-t-lg" src={shinchan} alt="" />
+    
+      <div className="p-5">
+       
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {props.title}
+          </h5>
+          <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+            {props.createdAt}
+          </h5>
+        <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
+          {truncatedDescription}
+          {props.description.length > 25 && (
+            <span
+              onClick={showDetailsHandler}
+              className="text-blue-700 cursor-pointer"
+            >
+              {" "}
+              ...Read more
+            </span>
+          )}
+        </p>
+        <Modal
+          isModalOpen={isModalOpen}
+          setIsModalOpen={setIsModalOpen}
+          title={props.title}
+          content={props.description}
+        />
+      </div>
+    </div>
   );
 }
 

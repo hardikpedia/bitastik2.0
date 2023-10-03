@@ -37,10 +37,8 @@ const filteredBitians = filteredByYears.filter((bitian) =>
   filteredByBranches.includes(bitian)
 );
 
-
-
   return (
-    <div className="w-full lg:w-1/2 ">
+    <div className="w-3/4">
       
 
       <div className="fixed top-0 right-0 z-50 flex flex-row">
@@ -50,6 +48,7 @@ const filteredBitians = filteredByYears.filter((bitian) =>
 
       <div className="flex flex-col mt-8 items-center justify-center">
         <ProfileList bitians={filteredBitians} />
+
       </div>
     </div>
   );

@@ -1,10 +1,15 @@
 import User from "../../../models/userSchema";
 import dbConnect from "../../../lib/dbconnect";
-import { getServerSession } from "next-auth/next"
+import { getServerSession } from "next-auth/next";
 dbConnect();
 
 async function handler(req, res) {
-  const email="damnnnnn"
+const email="hardik"
+// const name="hardik"
+
+
+
+  
   if (req.method === "POST") {
     try {
       const {
@@ -18,10 +23,9 @@ async function handler(req, res) {
         hostel,
         room,
         phone,
-        birthdate
+        birthdate,
       } = req.body;
 
-      
       const user_instance = await User.updateOne(
         { email: email },
         {
@@ -31,16 +35,17 @@ async function handler(req, res) {
           linkedIn: linkedIn,
           insta: insta,
           bio: bio,
-          branch: branch,        
+          branch: branch,
           yearofgraduation: yearofgraduation,
           hostel: hostel,
           room: room,
           phone: phone,
-          birthdate:birthdate
+          birthdate: birthdate,
+          name: name,
         },
         { upsert: true }
       );
-     console.log(user_instance);
+      console.log(user_instance);
       res.status(200).json({ message: "user Added", Status: "Success" });
     } catch (err) {
       const response = { Status: "Failure", Description: err.message };
@@ -49,9 +54,9 @@ async function handler(req, res) {
   }
   if (req.method === "GET") {
     const { email } = req.query;
-console.log('====================================');
-console.log(email);
-console.log('====================================');
+    console.log("====================================");
+    console.log(email);
+    console.log("====================================");
     try {
       const user_instance = await User.find({ email: email });
       res.status(200).json({
@@ -59,9 +64,9 @@ console.log('====================================');
         Status: "Success",
         user: user_instance,
       });
-      console.log('====================================');
+      console.log("====================================");
       console.log(user_instance);
-      console.log('====================================');
+      console.log("====================================");
     } catch (err) {
       const response = { Status: "Failure", Description: err.message };
       res.send(response).status(400);
@@ -70,12 +75,12 @@ console.log('====================================');
   if (req.method === "PUT") {
     try {
       const { email, newNote } = req.body;
-      console.log('====================================');
+      console.log("====================================");
       console.log(email);
-      console.log('====================================');
+      console.log("====================================");
       console.log(newNote);
-      console.log('====================================');
-      console.log('====================================');
+      console.log("====================================");
+      console.log("====================================");
       const user_instance = await User.findOne({ email });
 
       if (!user_instance) {

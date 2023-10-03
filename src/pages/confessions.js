@@ -17,7 +17,7 @@ const ConfessionPage = () => {
   };
   const upvoteHandler = async (_id) => {
     const response = await axios.put("/api/confession", {
-      email: "570",
+      email: "hardikgupta0506@gmail.com",
       _id: _id,
       vote: "upvote",
     });
@@ -27,7 +27,7 @@ const ConfessionPage = () => {
 
   const downvoteHandler = async (_id) => {
     const response = await axios.put("/api/confession", {
-      email: "570",
+      email: "hardikgupta0506@gmail.com",
       _id: _id,
       vote: "downvote",
     });
@@ -38,7 +38,7 @@ const ConfessionPage = () => {
 
 
   return (
-    <div className="w-3/4">
+    <div className="w-3/4 ml-4 ">
       <ConfessionList
         confessions={data.confessions}
         upvoteHandler={upvoteHandler}

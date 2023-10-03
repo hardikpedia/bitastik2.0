@@ -32,6 +32,7 @@ function Todolist({ notes_old, addNote, deleteNote }) {
                 title={noteItem.title}
                 note={noteItem.note}
                 deleteNote={deleteNote}
+                createdAt={noteItem.createdAt}
               />
             );
           })}

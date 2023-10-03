@@ -7,13 +7,13 @@ function NewsForm({ addNews }) {
     const validationSchema = Yup.object().shape({
         title: Yup.string().required('Title is required'),
         image: Yup.string().url('Image URL must be a valid URL').required('Image URL is required'),
-        date: Yup.string().required('Date is required'),
+       
         description: Yup.string().required('Description is required'),
       });
       const  initialValues= {
         title: '',
         image: '',
-        date: '',
+      
         description: '',
       };
 
@@ -72,23 +72,7 @@ function NewsForm({ addNews }) {
                 <div className="text-red-600">{formik.errors.image}</div>
               ) : null}
             </div>
-            <div className="mb-2">
-              <label htmlFor="date" className="block font-bold mb-1">
-                Date
-              </label>
-              <input
-                type="text"
-                id="date"
-                name="date"
-                onChange={formik.handleChange}
-                onBlur={formik.handleBlur}
-                value={formik.values.date}
-                className="w-full border rounded px-2 py-1"
-              />
-              {formik.touched.date && formik.errors.date ? (
-                <div className="text-red-600">{formik.errors.date}</div>
-              ) : null}
-            </div>
+           
             <div className="mb-2">
               <label htmlFor="description" className="block font-bold mb-1">
                 Description

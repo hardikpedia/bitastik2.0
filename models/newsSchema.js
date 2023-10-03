@@ -8,12 +8,14 @@ const newsSchema = new Schema({
   image: {
     type: String,
   },
-  date: {
-    type: String,
-  },
+ 
   description: {
     type: String,
-  }
+  },
+  createdAt: {
+    type: Date,
+    default: Date.now(),
+  },
 
 }, { timestamps: true });
 export default models.News || model('News', newsSchema);
