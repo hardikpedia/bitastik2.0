@@ -55,7 +55,7 @@ function Cheader({ refreshConfessions }) {
         placeholder="What's on your mind, friend?"
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className="border-none rounded-l-md p-2 w-full md:w-96 text-gray-700 focus:outline-none mb-2 md:mb-0"
+        className="border-none rounded-l-md p-2 w-full md:w-96 text-white focus:outline-none mb-2 md:mb-0 bg-gray-900"
       />
       <button
         type="submit"

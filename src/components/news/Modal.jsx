@@ -14,7 +14,7 @@ export default function Modal({ isModalOpen, setIsModalOpen, title, content }) {
       <div className="relative w-full max-w-2xl max-h-full">
         <div className="relative bg-white rounded-lg shadow dark:bg-gray-700">
           <div className="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
+            <h3 className="text-xl font-semibold text-pink-500">
               {title}
             </h3>
             <button
@@ -41,7 +41,7 @@ export default function Modal({ isModalOpen, setIsModalOpen, title, content }) {
             </button>
           </div>
           <div className="p-6 space-y-6">
-            <p className="text-base leading-relaxed text-gray-500 dark:text-gray-400">
+            <p className="text-base leading-relaxed text-blue-400">
               {content}
             </p>
           </div>

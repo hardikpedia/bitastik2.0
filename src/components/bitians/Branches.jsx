@@ -27,9 +27,7 @@ function Branches({ onSelect,selectedBranches }) {
           isDropdownOpen ? 'bg-gray-800' : 'hover:bg-gray-800 hover:text-black'
         }`}
       >
-        {selectedBranches.length > 0
-          ? selectedBranches.join(', ')
-          : 'Filter by branch'}
+         Filter by branch
         <svg
           className={`w-4 h-4 ml-2 transition-transform ${
             isDropdownOpen ? 'transform rotate-180' : ''

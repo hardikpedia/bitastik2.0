@@ -42,14 +42,14 @@ function CreateArea({addNote}) {
 
   return (
 <div>
-  <form className="create-note bg-white rounded-lg shadow-md p-4 w-60 m-auto">
+  <form className="create-note bg-gray-900 rounded-lg shadow-md p-4 w-60 m-auto">
     {isExpanded && (
       <input
         name="title"
         onChange={handleChange}
         value={note.title}
         placeholder="Title"
-        className="w-full mb-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-black"
+        className="w-full mb-2 p-2 border border-gray-800 rounded-md focus:outline-none focus:ring focus:border-black bg-gray-900"
       />
     )}
 
@@ -60,13 +60,13 @@ function CreateArea({addNote}) {
       value={note.note}
       placeholder="Take a note..."
       rows={isExpanded ? 3 : 1}
-      className="w-full mb-2 p-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:border-black"
+      className="w-full mb-2 p-2 border border-gray-800 rounded-md focus:outline-none focus:ring focus:border-black bg-gray-900"
     />
 
     <Zoom in={isExpanded}>
       <Fab
         onClick={submitNote}
-        className="bg-black hover:bg-gray-900 text-white py-2 px-4 rounded-md"
+        className="bg-black hover:bg-gray-800 text-white py-2 px-4 rounded-md "
       >
         <AddIcon />
       </Fab>

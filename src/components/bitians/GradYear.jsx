@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 function GradYear({ onSelect, selectedYears }) {
   const [isDropdownOpen, setDropdownOpen] = useState(false);
 
-  const years = ['2020', '2021', '2022', '2023', '2024', '2025'];
+  const years = [2020, 2021, 2022, 2023, 2024, 2025];
 
   const toggleDropdown = () => {
     setDropdownOpen(!isDropdownOpen);
@@ -27,9 +27,8 @@ function GradYear({ onSelect, selectedYears }) {
           isDropdownOpen ? 'bg-gray-800' : 'hover:bg-gray-800 hover:text-black'
         }`}
       >
-        {selectedYears.length > 0
-          ? selectedYears.join(', ') 
-          : 'Filter by year'}
+   
+          Filter by year
         <svg
           className={`w-4 h-4 ml-2 transition-transform ${
             isDropdownOpen ? 'transform rotate-180' : ''

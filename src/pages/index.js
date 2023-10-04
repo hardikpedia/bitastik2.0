@@ -10,7 +10,7 @@ function Home() {
   const session = useSession();
   console.log("mai aya");
   const handleSignIn=()=>{
-    signIn('google')
+     signIn('google')
   }
   useEffect(() => {
     if (session.status === "authenticated") {

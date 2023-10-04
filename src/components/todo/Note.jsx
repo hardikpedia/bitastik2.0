@@ -8,8 +8,8 @@ function Note({ id, note, title, deleteNote, createdAt }) {
 
   return (
     <div
-      className="rounded-lg shadow-xl bg-gray-900 text-white font-mono"
-      style={{ width: "450px" }}
+      className="rounded-lg shadow-xl bg-gray-900 text-white font-mono w-72 sm:w-96"
+     
     >
       <div className="border-b border-gray-800 px-8 py-3">
         <div

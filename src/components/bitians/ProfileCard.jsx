@@ -7,38 +7,56 @@ import profile from "../../../assets/shinchan.jpg";
 import Image from "next/image";
 import React from "react";
 
-function ProfileCard({ info }) {
+function ProfileCard({ info, onClose }) {
   const nameWords = info.name.split(" ");
 
   return (
-
-    <section class="w-64 mx-8 my-2 bg-[#20354b] rounded-2xl px-8 py-6 shadow-lg font-mono">
-      <div class="flex items-center justify-between">
-        <span class="text-gray-400 text-sm font-bold">{info.branch}</span>
+    <section className="w-64 mx-8 my-2 bg-[#20354b] rounded-2xl px-6 py-6 shadow-lg font-mono">
+      <div className="flex flex-row-reverse justify-between">
+        {onClose && (
+          <div
+            className="w-6 h-6 rounded-full bg-red-500 cursor-pointer flex items-center justify-center"
+            onClick={onClose}
+          >
+            <div className="w-4 h-1 bg-white transform rotate-45 absolute"></div>
+            <div className="w-4 h-1 bg-white transform -rotate-45 absolute"></div>
+          </div>
+        )}
+        <div className="flex items-center justify-between">
+          <span className="text-gray-400 text-sm font-bold">{info.branch}</span>
+        </div>
+        <div className="flex items-center justify-between">
+          <span className="text-gray-400 text-sm font-bold">
+            {info.yearofgraduation}
+          </span>
+        </div>
       </div>
-      <div class="mt-6 w-fit mx-auto">
+
+      <div className="mt-6 w-fit mx-auto">
         <Image
           src={profile}
-          class="rounded-full w-28 h-28 "
+          className="rounded-full w-28 h-28 "
           alt="profile picture"
-          srcset=""
         />
       </div>
 
-      <div class="mt-8">
+      <div className="mt-8">
         {nameWords.map((word, index) => (
-          <h2 key={index} class="text-white font-bold text-2xl tracking-wide">
+          <h2
+            key={index}
+            className="text-white font-bold text-2xl tracking-wide"
+          >
             {word}
           </h2>
         ))}
       </div>
-      <p class="text-emerald-400 font-semibold mt-2.5 font-mono">
+      <p className="text-emerald-400 font-semibold mt-2.5 font-mono">
         Software engineeer at Microsoft ansd mACHINE lEARNING eNTHUSIAST
       </p>
 
       <aside className="flex mt-3 space-x-3">
         <a
-          href="#"
+          href={info.linkedIn}
           target="_blank"
           className="mt-7 text-lg flex-auto text-center p-1 m-1 hover:text-shadow-md"
         >
@@ -56,7 +74,7 @@ function ProfileCard({ info }) {
           </span>
         </a>
         <a
-          href="#"
+          href={info.github}
           target="_blank"
           className="mt-7 text-lg flex-auto text-center p-1 m-1 hover:text-shadow-md"
         >
@@ -65,7 +83,7 @@ function ProfileCard({ info }) {
           </span>
         </a>
         <a
-          href="#"
+          href={`https://wa.me/${info.phone}`}
           target="_blank"
           className="mt-7 text-lg flex-auto text-center p-1 m-1 hover:text-shadow-md"
         >
@@ -74,7 +92,7 @@ function ProfileCard({ info }) {
           </span>
         </a>
         <a
-          href="#"
+          href={`https://mail.google.com/mail/?view=cm&fs=1&to=${info.email}`}
           target="_blank"
           className="mt-7 text-lg flex-auto text-center p-1 m-1 hover:text-shadow-md"
         >
@@ -83,7 +101,7 @@ function ProfileCard({ info }) {
           </span>
         </a>
       </aside>
-      <div class="mt-3 text-white text-sm"></div>
+      <div className="mt-3 text-white text-sm"></div>
     </section>
   );
 }

@@ -54,9 +54,9 @@ const email="hardik"
   }
   if (req.method === "GET") {
     const { email } = req.query;
-    console.log("====================================");
-    console.log(email);
-    console.log("====================================");
+    // console.log("====================================");
+    // console.log(email);
+    // console.log("====================================");
     try {
       const user_instance = await User.find({ email: email });
       res.status(200).json({
@@ -64,9 +64,7 @@ const email="hardik"
         Status: "Success",
         user: user_instance,
       });
-      console.log("====================================");
-      console.log(user_instance);
-      console.log("====================================");
+   
     } catch (err) {
       const response = { Status: "Failure", Description: err.message };
       res.send(response).status(400);

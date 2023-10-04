@@ -43,7 +43,7 @@ export default function Notes() {
 
      
   return (
-    <div className="w-3/4 ml-4" >
+    <div className="w-3/4 ml-16" >
       <Todolist notes_old={data.user[0].notes} addNote={addNote} deleteNote={deleteNote}/>
     </div>
   );
