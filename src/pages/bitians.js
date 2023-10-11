@@ -54,7 +54,6 @@ export default function Home({ bitians }) {
 }
 
 export async function getServerSideProps() {
-  // Fetch data from external API
   const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
   const res = await fetch(`${apiBaseUrl}/api/bitians`);
   const data = await res.json();

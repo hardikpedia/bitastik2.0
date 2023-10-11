@@ -36,9 +36,9 @@ function Cheader({ refreshConfessions }) {
   };
 
   return (
-<nav className="flex flex-col md:flex-row justify-between p-5 bg-primary rounded-b-xl">
+<nav className="flex flex-col gap-2 lg:flex-row justify-between p-5 bg-primary rounded-b-xl">
   <div className="flex items-center">
-    <span className="mb-4 md:mb-0">
+    <span >
       <Image src={secret} height={48} width={48} alt="secret" />
     </span>
     <span className="text-4xl text-white font-semibold ml-2 text-center md:text-left">CONFESSIONS</span>

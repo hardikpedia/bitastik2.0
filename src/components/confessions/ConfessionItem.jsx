@@ -34,9 +34,9 @@ function ConfessionItem({ confession, upvoteHandler,downvoteHandler }) {
   const isUpvoted = userVote && userVote.vote === "upvote";
   const isDownvoted = userVote && userVote.vote === "downvote";
   return (
-  <div className=" p-4   rounded-lg shadow bg-gray-900 border-gray-700 hover:bg-gray-700 text-gray-400 mb-4">
-  <div className="max-w-xl"> {/* Set a maximum width */}
-    <div className="text-lg mb-2">{confession.content}</div>
+  <div className=" p-4   rounded-lg shadow bg-transparent border hover:bg-gray-900 text-gray-400 mb-4">
+  <div className="max-w-xl"> 
+    <div className="text-lg mb-2 text-green-400">{confession.content}</div>
   </div>
   <div className="flex justify-between items-center">
     <div className="flex items-center space-x-2">
@@ -52,7 +52,7 @@ function ConfessionItem({ confession, upvoteHandler,downvoteHandler }) {
         <span>{confession.upvotes}</span>
       </button>
       <button
-        className={`flex items-center space-x-1 cursor-pointer ${isDownvoted ? ' text-red-500' : ''}`}
+        className={`flex items-center space-x-1 cursor-pointer ${isDownvoted ? ' text-pink-500' : ''}`}
         onClick={downvote}
       >
          {isDownvoted ? (

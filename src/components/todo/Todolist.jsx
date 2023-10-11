@@ -8,8 +8,8 @@ function Todolist({ notes_old, addNote, deleteNote }) {
   return (
     <div className="text-white">
       <div className="">
-        <header className="bg-white py-4 mb-4 rounded-b-xl shadow ">
-          <h1 className="text-primary text-center text-3xl font-semibold">
+        <header className="bg-transparent py-4 mb-4 rounded-b-xl shadow border">
+          <h1 className="text-white text-center text-3xl font-semibold">
             <Image
               src={noting}
               height={40}

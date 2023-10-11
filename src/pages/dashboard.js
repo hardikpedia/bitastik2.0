@@ -5,10 +5,12 @@ import Link from "next/link";
 import pencil from "../../assets/pencil.gif";
 import ProfileCard from "@/components/bitians/ProfileCard";
 import { useRouter } from "next/router";
+import { useSession } from "next-auth/react";
 
 const HomeComponent = () => {
   const [isOpen, setIsOpen] = useState(true);
   const [info, setInfo] = useState(null);
+  const { data: session, status } = useSession()
  
   const router = useRouter();
   const handleCloseCard = () => {
@@ -20,7 +22,7 @@ const HomeComponent = () => {
       const res = await axios.get(`/api/user?email=${email}`);
       setInfo(res.data.user[0]);
     };
-    findUser("hardik");
+    findUser(session.user.email);
   }, []);
 
   const cardClassName = isOpen

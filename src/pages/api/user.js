@@ -4,7 +4,7 @@ import { getServerSession } from "next-auth/next";
 dbConnect();
 
 async function handler(req, res) {
-const email="hardik"
+// const email="hardik"
 // const name="hardik"
 
 
@@ -13,6 +13,7 @@ const email="hardik"
   if (req.method === "POST") {
     try {
       const {
+        email,
         image,
         github,
         linkedIn,
@@ -24,6 +25,7 @@ const email="hardik"
         room,
         phone,
         birthdate,
+        name
       } = req.body;
 
       const user_instance = await User.updateOne(
