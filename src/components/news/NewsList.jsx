@@ -16,17 +16,18 @@ function NewsList({ data }) {
       </div>
 
       <div className="mt-10  flex flex-wrap justify-center font-mono gap-20 mx-2">
-        {data.map((news) => (
-          <NewsItem
-            key={news.id}
-            id={news.id}
-            image={news.image}
-            title={news.title}
-            date={news.date}
-            createdAt={news.createdAt}
-            description={news.description}
-          />
-        ))}
+        {data.map((news) =>  (
+      <NewsItem
+        key={news._id}
+        id={news.id}
+        image={news.image}
+        title={news.title}
+        date={news.date}
+        createdAt={news.createdAt}
+        description={news.description}
+      />
+    )
+  )}
       </div>
     </div>
   );
