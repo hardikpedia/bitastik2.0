@@ -3,7 +3,7 @@ import { useEffect,useState } from "react";
 import useSWR from "swr";
 import axios from "axios";
 export default function Notes() {
-   const email = "hardik";
+   const email="btech10103.20@bitmesra.ac.in"
 
     const fetcher = url => axios.get(url).then(res => res.data)
     const { data, mutate, error } = useSWR(`/api/user?email=${email}`, fetcher, { refreshInterval: 1000 ,revalidateOnFocus: true, 
@@ -45,6 +45,7 @@ export default function Notes() {
   return (
     <div className="w-3/4 ml-16" >
       <Todolist notes_old={data.user[0].notes} addNote={addNote} deleteNote={deleteNote}/>
+ 
     </div>
   );
 }

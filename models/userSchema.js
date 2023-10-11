@@ -19,7 +19,7 @@ const todoSchema = new Schema({
 const userSchema = new Schema({
   name: {
     type: String,
-    required: true,
+    // required: true,
     max: 50,
   },
   email: {

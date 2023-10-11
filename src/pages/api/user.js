@@ -4,16 +4,19 @@ import { getServerSession } from "next-auth/next";
 dbConnect();
 
 async function handler(req, res) {
-// const email="hardik"
-// const name="hardik"
+const email="btech10103.20@bitmesra.ac.in"
+
 
 
 
   
   if (req.method === "POST") {
+    console.log('====================================');
+    console.log(req.body);
+    console.log('====================================');
     try {
       const {
-        email,
+       
         image,
         github,
         linkedIn,
@@ -32,7 +35,6 @@ async function handler(req, res) {
         { email: email },
         {
           image: image,
-          email: email,
           github: github,
           linkedIn: linkedIn,
           insta: insta,
@@ -56,9 +58,7 @@ async function handler(req, res) {
   }
   if (req.method === "GET") {
     const { email } = req.query;
-    // console.log("====================================");
-    // console.log(email);
-    // console.log("====================================");
+   
     try {
       const user_instance = await User.find({ email: email });
       res.status(200).json({

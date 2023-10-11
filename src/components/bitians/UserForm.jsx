@@ -73,6 +73,7 @@ const UserForm = ({ updateUser }) => {
       // Submit the form data to the server using the updateUser function
       console.log("Form submitted successfully");
       await updateUser(values);
+      
       // Optionally, you can handle success here, e.g., show a success message
     } catch (error) {
       // Handle any errors that occur during form submission
@@ -87,9 +88,9 @@ const UserForm = ({ updateUser }) => {
   });
 
   return (
-    <div className="max-w-md mx-auto mt-10 p-4">
+    <div className="max-w-md ml-16 mt-5 p-4">
       <h2 className="text-2xl font-semibold mb-4 text-white">User Information</h2>
-      <form onSubmit={formik.handleSubmit} className="flex flex-wrap">
+      <form onSubmit={formik.handleSubmit} className="flex flex-wrap ">
         <div className="w-full md:w-1/2 mb-4 pr-2">
           <label htmlFor="branch" className="block text-white mb-2">
             Branch
