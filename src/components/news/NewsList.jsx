@@ -7,11 +7,11 @@ function NewsList({ data }) {
   return (
     <div>
       <div className=" w-full mx-2 bg-transparent justify-center text-center pt-4">
-        <h1 className="text-white text-3xl font-semibold">
-          <span className="inline-block">
+        <h1 className="text-white text-3xl font-semibold flex justify-center ">
+          <span className="inline-block ">
             <Image src={newspaper} height={48} width={48} alt="" />
           </span>
-          NEWSROOM 101
+          Newsroom
         </h1>
       </div>
 

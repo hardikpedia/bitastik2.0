@@ -73,7 +73,7 @@ const ConfessionPage = ({ initialData }) => {
   const upvoteHandler = async (_id) => {
     try {
       await axios.put("/api/confession", {
-        email: "hardikgupta0506@gmail.com",
+        email: "btech10103.20@bitmesra.ac.in",
         _id: _id,
         vote: "upvote",
       });
@@ -86,7 +86,7 @@ const ConfessionPage = ({ initialData }) => {
   const downvoteHandler = async (_id) => {
     try {
       await axios.put("/api/confession", {
-        email: "hardikgupta0506@gmail.com",
+        email: "btech10103.20@bitmesra.ac.in",
         _id: _id,
         vote: "downvote",
       });
@@ -113,6 +113,7 @@ const ConfessionPage = ({ initialData }) => {
 export async function getServerSideProps() {
   try {
     const response = await axios.get("/api/confession");
+    console.log(response);
     const initialData = response.data;
   
     return {

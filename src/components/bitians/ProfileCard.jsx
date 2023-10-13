@@ -4,6 +4,7 @@ import git from "../../../assets/git.png";
 import whatsapp from "../../../assets/whatsapp.png";
 import gmail from "../../../assets/gmail.png";
 import profile from "../../../assets/shinchan.jpg";
+import GitHubIcon from "@mui/icons-material/GitHub";
 import Image from "next/image";
 import React from "react";
 
@@ -11,7 +12,7 @@ function ProfileCard({ info, onClose }) {
   const nameWords = info.name.split(" ");
 
   return (
-    <section className="w-64 mx-8 my-4 bg-transparent hover:bg-gray-700 rounded-2xl border px-6 py-6 shadow-lg font-mono">
+    <section className="sm:w-80 w-64 mx-4 my-4 bg-transparent hover:bg-gray-700 rounded-2xl border px-6 py-6 shadow-lg font-mono ">
       <div className="flex flex-row-reverse justify-between">
         {onClose && (
           <div
@@ -51,7 +52,7 @@ function ProfileCard({ info, onClose }) {
         ))}
       </div>
       <p className="text-emerald-400 font-semibold mt-2.5 font-mono">
-      {info.bio}
+        {info.bio}
       </p>
 
       <aside className="flex mt-3 space-x-3">
@@ -76,10 +77,13 @@ function ProfileCard({ info, onClose }) {
         <a
           href={info.github}
           target="_blank"
-          className="mt-7 text-lg flex-auto text-center p-1 m-1 hover:text-shadow-md bg-white"
+          className="mt-7 text-lg flex-auto  text-center  hover:text-shadow-md"
         >
-          <span className="w-4 h-4 bg-white">
-            <Image src={git} height={24} width={24} alt="" />
+          <span className="w-4 h-4">
+            {/* <Image src={git} height={24} width={24} alt="" /> */}
+            <GitHubIcon
+              style={{ color: "white", height: "24", width: "24" }}
+            />
           </span>
         </a>
         <a

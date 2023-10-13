@@ -23,7 +23,7 @@ function Branches({ onSelect,selectedBranches }) {
     <div className="relative">
       <button
         onClick={toggleDropdown}
-        className={`bg-black text-white px-4 py-2 rounded-lg shadow focus:outline-none ${
+        className={`bg-black opacity-80 border-white border text-white px-2 py-2 rounded-lg shadow focus:outline-none ${
           isDropdownOpen ? 'bg-gray-800' : 'hover:bg-gray-800 hover:text-black'
         }`}
       >
@@ -46,12 +46,11 @@ function Branches({ onSelect,selectedBranches }) {
       </button>
 
       {isDropdownOpen && (
-        <div className="absolute top-12 right-0 mt-2 w-36 bg-black text-white rounded-lg shadow-lg">
-          <h6 className="text-white font-medium p-3">branch</h6>
-          <ul>
+        <div className="absolute top-12 right-0 mt-2 w-36 max-h-80 overflow-y-auto border-white border text-white rounded-lg shadow-lg">
+          <ul className=' '>
             {branches.map((branch) => (
               <li key={branch}>
-                <label className="flex items-center p-2">
+                <label className="flex items-center p-2 bg-opacity-80 bg-black">
                   <input
                     type="checkbox"
                     className="mr-2 form-checkbox text-primary-600 focus:ring-primary-500"
@@ -59,7 +58,7 @@ function Branches({ onSelect,selectedBranches }) {
                     checked={selectedBranches.includes(branch)}
                     onChange={() => togglebranch(branch)}
                   />
-                  <span className="text-white">{branch}</span>
+                  <span className="text-white z-50">{branch}</span>
                 </label>
               </li>
             ))}

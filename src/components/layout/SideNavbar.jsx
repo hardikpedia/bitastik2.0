@@ -34,12 +34,12 @@ function SideNavbar() {
   ];
   const [open, setOpen] = useState(false);
   return (
-    <div className="fixed"> 
-    <section className="gap-6 min-h-screen border-r-2 z-100">
+    <div className="bg-primary bg-opacity-30 fixed z-50"> 
+    <section className="gap-6 min-h-screen border-r-2 ">
       <div
-        className={`bg-primary ${
+        className={` ${
           open ? "w-56" : "w-16"
-        } duration-500 text-gray-100 px-4 bg-opacity-30`}
+        } duration-500 text-gray-100 px-4 `}
       >
         <div className="py-3 flex justify-end">
         {open ? (
@@ -63,7 +63,9 @@ function SideNavbar() {
               if (menu.name === 'logout') {
                 handleSignOut();
               } else {
+                
                 router.push(`/${menu.name}`);
+                setOpen(false);
               }
             }}
               key={i}

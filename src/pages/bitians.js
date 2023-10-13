@@ -34,8 +34,8 @@ export default function Home({ bitians }) {
   );
 
   return (
-    <div className="w-3/4">
-      <div className="fixed top-0 right-0 z-50 flex flex-row">
+    <div >
+      <div className="fixed top-0 right-0 flex flex-row">
         <GradYear
           onSelect={updateSelectedYears}
           selectedYears={selectedYears}

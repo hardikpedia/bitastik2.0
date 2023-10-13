@@ -2,8 +2,8 @@ import TypeIt from "typeit-react";
 
 export default function TypeItComponent() {
   return (
-    <div className="text-white">
-      <h1>
+    <div className="text-white h-screen flex flex-col items-center justify-center">
+      <h1 className="font-mono text-6xl sm:text-9xl">
         <TypeIt
           options={{
             strings: ["Bitastik"],
@@ -12,7 +12,7 @@ export default function TypeItComponent() {
           }}
         />
       </h1>
-      <h1>
+      <h1 className="font-mono text-2xl sm:text-6xl">
         <TypeIt
           getBeforeInit={(instance) => {
             instance

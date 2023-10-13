@@ -18,7 +18,7 @@ async function handler(req, res) {
   }
 
   if (req.method === "POST") {
-  if(email==="akshay"){ try {
+   try {
       const { title, image, date, description } = req.body;
       console.log("====================================");
       console.log(req.body);
@@ -34,9 +34,6 @@ async function handler(req, res) {
     } catch (err) {
       const response = { Status: "Failure", Desciription: err.message };
       res.send(response).status(400);
-    }}
-    else {
-      res.status(401).json({ message: "You are not authorised" });
     }
   }
 }

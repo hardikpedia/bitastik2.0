@@ -32,7 +32,7 @@ export async function getServerSideProps() {
   
     return {
       props: {
-        news,
+        news
       },
     };
   } catch (error) {

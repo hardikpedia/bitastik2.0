@@ -2,12 +2,14 @@ import Todolist from "@/components/todo/Todolist";
 import { useEffect,useState } from "react";
 import useSWR from "swr";
 import axios from "axios";
-export default function Notes() {
+export default function Notes({ initialData}) {
    const email="btech10103.20@bitmesra.ac.in"
 
     const fetcher = url => axios.get(url).then(res => res.data)
-    const { data, mutate, error } = useSWR(`/api/user?email=${email}`, fetcher, { refreshInterval: 1000 ,revalidateOnFocus: true, 
-    revalidateOnReconnect: true, });
+    const { data, mutate, error } = useSWR(`/api/user?email=${email}`, fetcher, { initialData: initialData,
+      refreshInterval: 1000,
+      revalidateOnFocus: true,
+      revalidateOnReconnect: true,});
     if (error) return <div>Error: {error.message}</div>;
     if (!data) return <div>Loading...</div>
     
@@ -51,3 +53,23 @@ export default function Notes() {
 }
 
 
+export async function getServerSideProps() {
+  const email="btech10103.20@bitmesra.ac.in"
+  try {
+    const response = await axios.get(`/api/user?email=${email}`);
+   const initialData = response.data;
+  console.log(initialData);
+    return {
+      props: {
+        initialData,
+      },
+    };
+  } catch (error) {
+    console.error("Error fetching initial data:", error);
+    return {
+      props: {
+        initialData: null,
+      },
+    };
+  }
+}

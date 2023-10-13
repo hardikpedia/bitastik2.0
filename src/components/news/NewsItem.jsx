@@ -13,7 +13,7 @@ function NewsItem(props) {
 
   const truncatedDescription =
     props.description.length > 18
-      ? props.description.slice(0, 18) + "..."
+      ? props.description.slice(0, 18) 
       : props.description;
 
   var providedDate = new Date(props.createdAt);

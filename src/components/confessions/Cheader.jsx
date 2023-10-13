@@ -1,8 +1,6 @@
 import { useState } from "react";
-
 import Image from "next/image";
 import whisper from "../../../assets/love-letter.png";
-import secret from "../../../assets/secret.png";
 function Cheader({ refreshConfessions }) {
   const [value, setValue] = useState("");
   const handleClick = async () => {
@@ -36,14 +34,10 @@ function Cheader({ refreshConfessions }) {
   };
 
   return (
-<nav className="flex flex-col gap-2 lg:flex-row justify-between p-5 bg-primary rounded-b-xl">
+<nav className="flex flex-col gap-2 lg:flex-row justify-between p-5 bg-primary rounded-b-xl font-mono">
   <div className="flex items-center">
-    <span >
-      <Image src={secret} height={48} width={48} alt="secret" />
-    </span>
-    <span className="text-4xl text-white font-semibold ml-2 text-center md:text-left">CONFESSIONS</span>
+    <span className="text-4xl text-white font-semibold ml-2 text-center md:text-left">Confessions</span>
   </div>
-  {/* <div className="search_box mt-4 md:mt-0 md:ml-4 flex items-center border border-gray-300 rounded-lg p-2 bg-primary"> */}
     <form
       onSubmit={(e) => {
         e.preventDefault();
@@ -65,7 +59,7 @@ function Cheader({ refreshConfessions }) {
         <Image src={whisper} alt="Whisper"  />
       </button>
     </form>
-  {/* </div> */}
+
 </nav>
   );
 }
