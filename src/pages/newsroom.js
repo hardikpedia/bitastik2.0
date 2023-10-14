@@ -1,6 +1,5 @@
 import NewsList from "@/components/news/NewsList";
 import axios from "axios";
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import add from "../../assets/add.gif";
 import Image from "next/image";
@@ -26,6 +25,7 @@ const NewsPage = ({ news }) => {
 
 
 export async function getServerSideProps() {
+  
   try {
     const response = await axios.get("/api/news");
     const news= response.data.news;

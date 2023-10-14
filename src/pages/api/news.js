@@ -4,7 +4,6 @@ import { useSession } from "next-auth/react";
 dbConnect();
 
 async function handler(req, res) {
-  const email="hardik";
   if (req.method === "GET") {
     console.log("====================================");
     try {
