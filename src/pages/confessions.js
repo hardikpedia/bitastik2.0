@@ -58,8 +58,7 @@ import axios from "axios";
 
 const fetcher = (url) => axios.get(url).then((res) => res.data);
 
-const ConfessionPage = ({ initialData }) => { 
-  
+const ConfessionPage = ({ initialData }) => {
   const { data, mutate, error } = useSWR("/api/confession", fetcher, {
     initialData: initialData,
     refreshInterval: 1000,
@@ -113,7 +112,7 @@ const ConfessionPage = ({ initialData }) => {
 
 export async function getServerSideProps() {
   try {
-    const response = await axios.get("/api/confession");
+    const response = await axios.get(`${NEXT_PUBLIC_API_BASE_URL}/api/confession`);
     console.log(response);
     const initialData = response.data;
   

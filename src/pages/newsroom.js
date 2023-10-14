@@ -27,7 +27,7 @@ const NewsPage = ({ news }) => {
 export async function getServerSideProps() {
   
   try {
-    const response = await axios.get("/api/news");
+    const response = await axios.get(`${NEXT_PUBLIC_API_BASE_URL}/api/news`);
     const news= response.data.news;
     console.log(news);
     return {
