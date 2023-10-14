@@ -58,7 +58,8 @@ import axios from "axios";
 
 const fetcher = (url) => axios.get(url).then((res) => res.data);
 
-const ConfessionPage = ({ initialData }) => {
+const ConfessionPage = ({ initialData }) => { 
+  
   const { data, mutate, error } = useSWR("/api/confession", fetcher, {
     initialData: initialData,
     refreshInterval: 1000,

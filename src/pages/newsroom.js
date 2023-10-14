@@ -39,7 +39,7 @@ export async function getServerSideProps() {
     console.error("Error fetching initial data:", error);
     return {
       props: {
-        initialData: null,
+        news: null,
       },
     };
   }
