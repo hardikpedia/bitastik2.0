@@ -35,8 +35,6 @@
 //     refreshConfessions();
 //   };
 
-
-
 //   return (
 //     <div className="w-3/4 ml-16 ">
 //       <ConfessionList
@@ -50,7 +48,6 @@
 // };
 
 // export default ConfessionPage;
-
 
 import ConfessionList from "@/components/confessions/ConfessionList";
 import useSWR from "swr";
@@ -112,10 +109,12 @@ const ConfessionPage = ({ initialData }) => {
 
 export async function getServerSideProps() {
   try {
-    const response = await axios.get(`${NEXT_PUBLIC_API_BASE_URL}/api/confession`);
-    console.log(response);
+    const response = await axios.get(
+      "https://bitastik2.vercel.app/api/confession"
+    );
+    console.log("igig", response);
     const initialData = response.data;
-  
+
     return {
       props: {
         initialData,

@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const NewsPage = ({ news }) => {
   
-
+  if(!news) return <div>Loading...</div>
 
   return (
     <div className="w-3/4 ml-8">
@@ -27,9 +27,8 @@ const NewsPage = ({ news }) => {
 export async function getServerSideProps() {
   
   try {
-    const response = await axios.get(`${NEXT_PUBLIC_API_BASE_URL}/api/news`);
+    const response = await axios.get("https://bitastik2.vercel.app/api/news");
     const news= response.data.news;
-    console.log("yugii",news);
     return {
       props: {
         news
