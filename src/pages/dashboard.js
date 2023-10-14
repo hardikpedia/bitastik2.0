@@ -25,11 +25,11 @@ const HomeComponent = ({info}) => {
   // }, []);
 
   const cardClassName = isOpen
-    ? "fixed top-0 left-0 w-full h-full flex justify-center items-center transition-opacity duration-50 "
+    ? "transition-opacity duration-50 ease-in-out ml-16"
     : "hidden";
 
   return (
-    <div className="">
+    <div className="flex flex-col justify-evenly ">
       <div>
         <Link href="/userform">
           <button className="fixed z-10 top-0 right-0 m-2 p-2 text-black bg-white rounded-md shadow-md">

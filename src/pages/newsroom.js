@@ -9,12 +9,12 @@ const NewsPage = ({ news }) => {
   if(!news) return <div>Loading...</div>
 
   return (
-    <div className="w-3/4 ml-8">
+    <div className="w-3/4 ml-16">
       <Link href="/addnews">
         <div>
-          <button className="fixed top-0 right-0 m-2 p-2 text-black bg-white rounded-md shadow-md">
+          <button className="fixed top-0 right-0 m-2 p-2 text-black bg-white rounded-md shadow-md hidden">
             <Image src={add} height={36} width={36} alt="" />
-            <span>Add News</span>
+            <span >Add News</span>
           </button>
         </div>
       </Link>
