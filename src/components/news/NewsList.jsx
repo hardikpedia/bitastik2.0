@@ -18,7 +18,7 @@ function NewsList({ data }) {
       <div className="mt-10  flex flex-wrap justify-center font-mono gap-20 mx-2">
         {data.map((news) =>  (
       <NewsItem
-        key={news.id}
+        key={news._id}
         id={news.id}
         image={news.image}
         title={news.title}

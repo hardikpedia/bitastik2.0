@@ -29,7 +29,7 @@ export async function getServerSideProps() {
   try {
     const response = await axios.get("/api/news");
     const news= response.data.news;
-  
+    console.log(news);
     return {
       props: {
         news
