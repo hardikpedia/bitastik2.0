@@ -52,7 +52,7 @@ export default HomeComponent;
 export async function getServerSideProps() {
   const email="btech10103.20@bitmesra.ac.in"
   try {
-    const response = await axios.get(`/api/user?email=${email}`);
+    const response = await axios.get(`https://bitastik2.vercel.app/api/user?email=${email}`);
     console.log(response.data);
     const info = response.data.user[0];
   
